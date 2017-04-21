@@ -1,0 +1,2606 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+    >ndm (v3.11.3)</a>
+</h1>
+<h4>ndm allows you to deploy OS-specific service-wrappers directly from npm-packages.</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ndm">module ndm</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ndm.ndm">
+            function <span class="apidocSignatureSpan"></span>ndm
+            <span class="apidocSignatureSpan">(packageName, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ndm.Interview">
+            function <span class="apidocSignatureSpan">ndm.</span>Interview
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ndm.centos">
+            function <span class="apidocSignatureSpan">ndm.</span>centos
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ndm.darwin">
+            function <span class="apidocSignatureSpan">ndm.</span>darwin
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ndm.init_d">
+            function <span class="apidocSignatureSpan">ndm.</span>init_d
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ndm.installer">
+            function <span class="apidocSignatureSpan">ndm.</span>installer
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ndm.ubuntu">
+            function <span class="apidocSignatureSpan">ndm.</span>ubuntu
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ndm.</span>Interview.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ndm.</span>centos.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ndm.</span>cli_base</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ndm.</span>darwin.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ndm.</span>init_d.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ndm.</span>installer.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ndm.</span>logger</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ndm.</span>platform_base</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ndm.</span>service</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ndm.</span>ubuntu.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ndm.</span>utils</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ndm.Interview">module ndm.Interview</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ndm.Interview.Interview">
+            function <span class="apidocSignatureSpan">ndm.</span>Interview
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ndm.Interview.prototype">module ndm.Interview.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ndm.Interview.prototype._addQuestion">
+            function <span class="apidocSignatureSpan">ndm.Interview.prototype.</span>_addQuestion
+            <span class="apidocSignatureSpan">(uniqueKey, parent)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ndm.Interview.prototype._generateQuestions">
+            function <span class="apidocSignatureSpan">ndm.Interview.prototype.</span>_generateQuestions
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ndm.Interview.prototype._inquirerQuestions">
+            function <span class="apidocSignatureSpan">ndm.Interview.prototype.</span>_inquirerQuestions
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ndm.Interview.prototype._loadServiceJson">
+            function <span class="apidocSignatureSpan">ndm.Interview.prototype.</span>_loadServiceJson
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ndm.Interview.prototype._updateServiceVariables">
+            function <span class="apidocSignatureSpan">ndm.Interview.prototype.</span>_updateServiceVariables
+            <span class="apidocSignatureSpan">(answers)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ndm.Interview.prototype.run">
+            function <span class="apidocSignatureSpan">ndm.Interview.prototype.</span>run
+            <span class="apidocSignatureSpan">(cb)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ndm.centos">module ndm.centos</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ndm.centos.centos">
+            function <span class="apidocSignatureSpan">ndm.</span>centos
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ndm.centos.super_">
+            function <span class="apidocSignatureSpan">ndm.centos.</span>super_
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ndm.centos.</span>configOverrides</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ndm.centos.prototype">module ndm.centos.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ndm.centos.prototype.isPlatform">
+            function <span class="apidocSignatureSpan">ndm.centos.prototype.</span>isPlatform
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ndm.centos.prototype.restart">
+            function <span class="apidocSignatureSpan">ndm.centos.prototype.</span>restart
+            <span class="apidocSignatureSpan">(service, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ndm.centos.prototype.start">
+            function <span class="apidocSignatureSpan">ndm.centos.prototype.</span>start
+            <span class="apidocSignatureSpan">(service, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ndm.centos.prototype.stop">
+            function <span class="apidocSignatureSpan">ndm.centos.prototype.</span>stop
+            <span class="apidocSignatureSpan">(service, cb)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ndm.cli_base">module ndm.cli_base</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ndm.cli_base.CliBase">
+            function <span class="apidocSignatureSpan">ndm.cli_base.</span>CliBase
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ndm.darwin">module ndm.darwin</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ndm.darwin.darwin">
+            function <span class="apidocSignatureSpan">ndm.</span>darwin
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ndm.darwin.super_">
+            function <span class="apidocSignatureSpan">ndm.darwin.</span>super_
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ndm.darwin.</span>configOverrides</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ndm.darwin.prototype">module ndm.darwin.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ndm.darwin.prototype.restart">
+            function <span class="apidocSignatureSpan">ndm.darwin.prototype.</span>restart
+            <span class="apidocSignatureSpan">(service, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ndm.darwin.prototype.start">
+            function <span class="apidocSignatureSpan">ndm.darwin.prototype.</span>start
+            <span class="apidocSignatureSpan">(service, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ndm.darwin.prototype.stop">
+            function <span class="apidocSignatureSpan">ndm.darwin.prototype.</span>stop
+            <span class="apidocSignatureSpan">(service, cb)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ndm.init_d">module ndm.init_d</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ndm.init_d.init_d">
+            function <span class="apidocSignatureSpan">ndm.</span>init_d
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ndm.init_d.super_">
+            function <span class="apidocSignatureSpan">ndm.init_d.</span>super_
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ndm.init_d.</span>configOverrides</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ndm.init_d.prototype">module ndm.init_d.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ndm.init_d.prototype.restart">
+            function <span class="apidocSignatureSpan">ndm.init_d.prototype.</span>restart
+            <span class="apidocSignatureSpan">(service, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ndm.init_d.prototype.start">
+            function <span class="apidocSignatureSpan">ndm.init_d.prototype.</span>start
+            <span class="apidocSignatureSpan">(service, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ndm.init_d.prototype.stop">
+            function <span class="apidocSignatureSpan">ndm.init_d.prototype.</span>stop
+            <span class="apidocSignatureSpan">(service, cb)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ndm.installer">module ndm.installer</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ndm.installer.installer">
+            function <span class="apidocSignatureSpan">ndm.</span>installer
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ndm.installer.prototype">module ndm.installer.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ndm.installer.prototype._generateServiceJson">
+            function <span class="apidocSignatureSpan">ndm.installer.prototype.</span>_generateServiceJson
+            <span class="apidocSignatureSpan">(update)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ndm.installer.prototype._getPackageJson">
+            function <span class="apidocSignatureSpan">ndm.installer.prototype.</span>_getPackageJson
+            <span class="apidocSignatureSpan">(basePath)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ndm.installer.prototype._printInitMessage">
+            function <span class="apidocSignatureSpan">ndm.installer.prototype.</span>_printInitMessage
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ndm.installer.prototype.init">
+            function <span class="apidocSignatureSpan">ndm.installer.prototype.</span>init
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ndm.installer.prototype.update">
+            function <span class="apidocSignatureSpan">ndm.installer.prototype.</span>update
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ndm.logger">module ndm.logger</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ndm.logger.error">
+            function <span class="apidocSignatureSpan">ndm.logger.</span>error
+            <span class="apidocSignatureSpan">(message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ndm.logger.errorLogged">
+            function <span class="apidocSignatureSpan">ndm.logger.</span>errorLogged
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ndm.logger.log">
+            function <span class="apidocSignatureSpan">ndm.logger.</span>log
+            <span class="apidocSignatureSpan">(message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ndm.logger.success">
+            function <span class="apidocSignatureSpan">ndm.logger.</span>success
+            <span class="apidocSignatureSpan">(message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ndm.logger.warn">
+            function <span class="apidocSignatureSpan">ndm.logger.</span>warn
+            <span class="apidocSignatureSpan">(message)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ndm.platform_base">module ndm.platform_base</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ndm.platform_base.PlatformBase">
+            function <span class="apidocSignatureSpan">ndm.platform_base.</span>PlatformBase
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ndm.service">module ndm.service</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ndm.service._serviceJsonPath">
+            function <span class="apidocSignatureSpan">ndm.service.</span>_serviceJsonPath
+            <span class="apidocSignatureSpan">(serviceNameFilter)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ndm.service.allServices">
+            function <span class="apidocSignatureSpan">ndm.service.</span>allServices
+            <span class="apidocSignatureSpan">(serviceNameFilter)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ndm.service.printRunMessage">
+            function <span class="apidocSignatureSpan">ndm.service.</span>printRunMessage
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ndm.service.transformPackageJson">
+            function <span class="apidocSignatureSpan">ndm.service.</span>transformPackageJson
+            <span class="apidocSignatureSpan">(packageJson)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ndm.ubuntu">module ndm.ubuntu</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ndm.ubuntu.ubuntu">
+            function <span class="apidocSignatureSpan">ndm.</span>ubuntu
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ndm.ubuntu.super_">
+            function <span class="apidocSignatureSpan">ndm.ubuntu.</span>super_
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ndm.ubuntu.</span>configOverrides</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ndm.ubuntu.prototype">module ndm.ubuntu.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ndm.ubuntu.prototype.restart">
+            function <span class="apidocSignatureSpan">ndm.ubuntu.prototype.</span>restart
+            <span class="apidocSignatureSpan">(service, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ndm.ubuntu.prototype.start">
+            function <span class="apidocSignatureSpan">ndm.ubuntu.prototype.</span>start
+            <span class="apidocSignatureSpan">(service, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ndm.ubuntu.prototype.stop">
+            function <span class="apidocSignatureSpan">ndm.ubuntu.prototype.</span>stop
+            <span class="apidocSignatureSpan">(service, cb)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ndm.utils">module ndm.utils</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ndm.utils.exec">
+            function <span class="apidocSignatureSpan">ndm.utils.</span>exec
+            <span class="apidocSignatureSpan">(command, cwd, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ndm.utils.loadServiceJson">
+            function <span class="apidocSignatureSpan">ndm.utils.</span>loadServiceJson
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ndm.utils.resolve">
+            function <span class="apidocSignatureSpan">ndm.utils.</span>resolve
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ndm.utils.writeServiceJson">
+            function <span class="apidocSignatureSpan">ndm.utils.</span>writeServiceJson
+            <span class="apidocSignatureSpan">(path, services)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ndm" id="apidoc.module.ndm">module ndm</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ndm.ndm" id="apidoc.element.ndm.ndm">
+        function <span class="apidocSignatureSpan"></span>ndm
+        <span class="apidocSignatureSpan">(packageName, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ndm = function (packageName, opts) {
+  return CliSelfInstall(_.extend({
+    filter: packageName,
+    appName: packageName
+  }, opts));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ndm.Interview" id="apidoc.element.ndm.Interview">
+        function <span class="apidocSignatureSpan">ndm.</span>Interview
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Interview(opts) {
+  _.extend(this,
+    {
+      inquirer: require(&#x27;inquirer&#x27;),
+      questionLookup: {},
+      logger: require(&#x27;./logger&#x27;),
+      services: null,
+      // optionally we can output service.json
+      // to a temporary file.
+      tmpServiceJsonPath: null
+    },
+    require(&#x27;./config&#x27;)(),
+    opts
+  );
+
+  this._loadServiceJson();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+// Ask a user questions about the service they&#x27;re
+// installing, and install it.
+CliBase.prototype.install = function(serviceName) {
+var _this = this,
+  tmpServiceJsonPath = temp.path({suffix: &#x27;.json&#x27;}),
+  srcServiceJsonPath = Service._serviceJsonPath(serviceName),
+  interview = new this.<span class="apidocCodeKeywordSpan">Interview</span>({
+    serviceJsonPath: srcServiceJsonPath,
+    tmpServiceJsonPath: tmpServiceJsonPath
+  });
+
+interview.run(function() {
+  config.tmpServiceJsonPath = tmpServiceJsonPath; // point to temporary config.
+  _this.generate(serviceName); // generate the service wrappers.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ndm.centos" id="apidoc.element.ndm.centos">
+        function <span class="apidocSignatureSpan">ndm.</span>centos
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Centos(opts) {
+  _.extend(this, {
+    platform: &#x27;centos&#x27;,
+    releaseInfoFile: &#x27;/etc/redhat-release&#x27;,
+    template: path.resolve(__dirname, &#x27;../../templates/upstart-centos.ejs&#x27;)
+  }, opts);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ndm.darwin" id="apidoc.element.ndm.darwin">
+        function <span class="apidocSignatureSpan">ndm.</span>darwin
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Darwin(opts) {
+  _.extend(this, {
+    platform: &#x27;darwin&#x27;,
+    template: path.resolve(__dirname, &#x27;../../templates/launchctl.ejs&#x27;)
+  }, opts);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ndm.init_d" id="apidoc.element.ndm.init_d">
+        function <span class="apidocSignatureSpan">ndm.</span>init_d
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function InitD(opts) {
+  _.extend(this, {
+    platform: &#x27;initd&#x27;,
+    template: path.resolve(__dirname, &#x27;../../templates/init-d.ejs&#x27;)
+  }, opts);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ndm.installer" id="apidoc.element.ndm.installer">
+        function <span class="apidocSignatureSpan">ndm.</span>installer
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Installer(opts) {
+  _.extend(this,
+    {},
+    require(&#x27;./config&#x27;)(),
+    opts
+  );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ndm.ubuntu" id="apidoc.element.ndm.ubuntu">
+        function <span class="apidocSignatureSpan">ndm.</span>ubuntu
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Ubuntu(opts) {
+  _.extend(this, {
+    platform: &#x27;ubuntu&#x27;,
+    template: path.resolve(__dirname, &#x27;../../templates/upstart-ubuntu.ejs&#x27;)
+  }, opts);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ndm.Interview" id="apidoc.module.ndm.Interview">module ndm.Interview</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ndm.Interview.Interview" id="apidoc.element.ndm.Interview.Interview">
+        function <span class="apidocSignatureSpan">ndm.</span>Interview
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Interview(opts) {
+  _.extend(this,
+    {
+      inquirer: require(&#x27;inquirer&#x27;),
+      questionLookup: {},
+      logger: require(&#x27;./logger&#x27;),
+      services: null,
+      // optionally we can output service.json
+      // to a temporary file.
+      tmpServiceJsonPath: null
+    },
+    require(&#x27;./config&#x27;)(),
+    opts
+  );
+
+  this._loadServiceJson();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+// Ask a user questions about the service they&#x27;re
+// installing, and install it.
+CliBase.prototype.install = function(serviceName) {
+var _this = this,
+  tmpServiceJsonPath = temp.path({suffix: &#x27;.json&#x27;}),
+  srcServiceJsonPath = Service._serviceJsonPath(serviceName),
+  interview = new this.<span class="apidocCodeKeywordSpan">Interview</span>({
+    serviceJsonPath: srcServiceJsonPath,
+    tmpServiceJsonPath: tmpServiceJsonPath
+  });
+
+interview.run(function() {
+  config.tmpServiceJsonPath = tmpServiceJsonPath; // point to temporary config.
+  _this.generate(serviceName); // generate the service wrappers.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ndm.Interview.prototype" id="apidoc.module.ndm.Interview.prototype">module ndm.Interview.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ndm.Interview.prototype._addQuestion" id="apidoc.element.ndm.Interview.prototype._addQuestion">
+        function <span class="apidocSignatureSpan">ndm.Interview.prototype.</span>_addQuestion
+        <span class="apidocSignatureSpan">(uniqueKey, parent)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_addQuestion = function (uniqueKey, parent) {
+  var key = uniqueKey.split(&#x27;:&#x27;).pop(),
+    value = parent[key];
+
+  if (typeof value === &#x27;object&#x27;) {
+    // this key did not collide, we do not need
+    // to namespace it.
+    if (!this.questionLookup[key]) uniqueKey = key;
+
+    this.questionLookup[uniqueKey] = {
+      key: key, // key to modify in original JSON.
+      parent: parent, // node in original JSON to modify,
+      message: value.description, // description for inquirer.
+      default: (value.default || &#x27;&#x27;).replace(&#x27;{{uuid}}&#x27;, uuid.v4()) // default value to display.
+    };
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ndm.Interview.prototype._generateQuestions" id="apidoc.element.ndm.Interview.prototype._generateQuestions">
+        function <span class="apidocSignatureSpan">ndm.Interview.prototype.</span>_generateQuestions
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_generateQuestions = function () {
+  var _this = this;
+
+  // generate questions from the global args object.
+  Object.keys(this.services.args || {}).forEach(function(arg) {
+    _this._addQuestion(&#x27;args:&#x27; + arg, _this.services.args);
+  });
+
+  // generate questions from the global env object.
+  Object.keys(this.services.env || {}).forEach(function(env) {
+    _this._addQuestion(&#x27;env:&#x27; + env, _this.services.env);
+  });
+
+  // now generate interview questions for each service.
+  Object.keys(this.services).forEach(function(key) {
+    if (key === &#x27;args&#x27; || key === &#x27;env&#x27;) return;
+
+    // add questions pulled from args.
+    Object.keys(_this.services[key].args || {}).forEach(function(arg) {
+      _this._addQuestion(key + &#x27;:args:&#x27; + arg, _this.services[key].args);
+    });
+
+    // add questions pulled from env.
+    Object.keys(_this.services[key].env || {}).forEach(function(env) {
+      _this._addQuestion(key + &#x27;:env:&#x27; + env, _this.services[key].env);
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ndm.Interview.prototype._inquirerQuestions" id="apidoc.element.ndm.Interview.prototype._inquirerQuestions">
+        function <span class="apidocSignatureSpan">ndm.Interview.prototype.</span>_inquirerQuestions
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_inquirerQuestions = function () {
+  var _this = this,
+    questions = [];
+
+  Object.keys(this.questionLookup).forEach(function(name) {
+    var question = {
+      message: _this.questionLookup[name].message,
+      name: name
+    }
+
+    // default values are optional.
+    if (_this.questionLookup[name].default) question.default = _this.questionLookup[name].default;
+
+    questions.push(question);
+  });
+
+  // confirm that the user actually wants to overwrite
+  // service.json.
+  if (!_this.tmpServiceJsonPath) {
+    questions.push({
+      name: &#x27;overwrite&#x27;,
+      type: &#x27;confirm&#x27;,
+      message: &#x27;overwrite service.json with new values?&#x27;
+    });
+  }
+
+  return questions;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ndm.Interview.prototype._loadServiceJson" id="apidoc.element.ndm.Interview.prototype._loadServiceJson">
+        function <span class="apidocSignatureSpan">ndm.Interview.prototype.</span>_loadServiceJson
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_loadServiceJson = function () {
+  this.services = utils.loadServiceJson(this.serviceJsonPath);
+
+  // we appear to be loading a package.json.
+  if (this.serviceJsonPath.indexOf(&#x27;package.json&#x27;) !== -1) {
+
+    // convert package.json to service.json.
+    this.services = Service.transformPackageJson(this.services);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ndm.Interview.prototype._updateServiceVariables" id="apidoc.element.ndm.Interview.prototype._updateServiceVariables">
+        function <span class="apidocSignatureSpan">ndm.Interview.prototype.</span>_updateServiceVariables
+        <span class="apidocSignatureSpan">(answers)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_updateServiceVariables = function (answers) {
+  var _this = this;
+
+  Object.keys(answers).forEach(function(answerKey) {
+    var answer = answers[answerKey],
+      question = _this.questionLookup[answerKey];
+
+    if (question) question.parent[question.key] = answer;
+  });
+
+  utils.writeServiceJson(this.tmpServiceJsonPath || this.serviceJsonPath, this.services);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ndm.Interview.prototype.run" id="apidoc.element.ndm.Interview.prototype.run">
+        function <span class="apidocSignatureSpan">ndm.Interview.prototype.</span>run
+        <span class="apidocSignatureSpan">(cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">run = function (cb) {
+  var _this = this;
+
+  // generate questions from service.json.
+  _this._generateQuestions();
+
+  var questions = this._inquirerQuestions();
+
+  this.inquirer.prompt(questions, function(answers) {
+    if (!answers || _this.tmpServiceJsonPath || answers.overwrite) {
+      _this._updateServiceVariables(answers);
+    } else {
+      _this.logger.error(&#x27;aborted writing service.json&#x27;)
+    }
+    cb();
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+
+
+
+
+#!/usr/bin/env node
+
+require(&#x27;../lib/cli&#x27;)().<span class="apidocCodeKeywordSpan">run</span>();
+
+// emit the appropriate exit code before shutting down.
+process.on(&#x27;exit&#x27;, function() {
+  if (require(&#x27;../lib/logger&#x27;).errorLogged()) process.exit(1);
+  else process.exit(0);
+});
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ndm.centos" id="apidoc.module.ndm.centos">module ndm.centos</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ndm.centos.centos" id="apidoc.element.ndm.centos.centos">
+        function <span class="apidocSignatureSpan">ndm.</span>centos
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Centos(opts) {
+  _.extend(this, {
+    platform: &#x27;centos&#x27;,
+    releaseInfoFile: &#x27;/etc/redhat-release&#x27;,
+    template: path.resolve(__dirname, &#x27;../../templates/upstart-centos.ejs&#x27;)
+  }, opts);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ndm.centos.super_" id="apidoc.element.ndm.centos.super_">
+        function <span class="apidocSignatureSpan">ndm.centos.</span>super_
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function PlatformBase(opts) {
+  _.extend(this, {
+    platform: null,
+    // path to template to use for service generation,
+    // use of a template may be optional.
+    template: null,
+    logger: require(&#x27;../logger&#x27;)
+  }, opts);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ndm.centos.prototype" id="apidoc.module.ndm.centos.prototype">module ndm.centos.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ndm.centos.prototype.isPlatform" id="apidoc.element.ndm.centos.prototype.isPlatform">
+        function <span class="apidocSignatureSpan">ndm.centos.prototype.</span>isPlatform
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isPlatform = function () {
+  if (!fs.existsSync(this.releaseInfoFile)) return false;
+  else return !!fs.readFileSync(this.releaseInfoFile, &#x27;utf-8&#x27;).match(/CentOS/);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Config.prototype.os = function() {
+  var _this = this;
+
+  if (this.platform) return this.platform;
+  else {
+    Object.keys(this.platformApis).forEach(function(key) {
+      var api = new _this.platformApis[key]();
+      if (api.<span class="apidocCodeKeywordSpan">isPlatform</span>()) _this.platform = api.platform;
+    });
+
+    if (this.platform) return this.platform;
+  }
+
+  return process.platform;
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ndm.centos.prototype.restart" id="apidoc.element.ndm.centos.prototype.restart">
+        function <span class="apidocSignatureSpan">ndm.centos.prototype.</span>restart
+        <span class="apidocSignatureSpan">(service, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">restart = function (service, cb) {
+  service.execCommand(&#x27;initctl restart &#x27; + service.name, cb);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+case &#x27;remove&#x27;:
+  ndm.remove();
+  break;
+case &#x27;start&#x27;:
+  ndm.start();
+  break;
+case &#x27;restart&#x27;:
+  ndm.<span class="apidocCodeKeywordSpan">restart</span>();
+  break;
+case &#x27;stop&#x27;:
+  ndm.stop();
+  break;
+case &#x27;list-scripts&#x27;:
+  ndm.listScripts();
+  break;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ndm.centos.prototype.start" id="apidoc.element.ndm.centos.prototype.start">
+        function <span class="apidocSignatureSpan">ndm.centos.prototype.</span>start
+        <span class="apidocSignatureSpan">(service, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">start = function (service, cb) {
+  service.execCommand(&#x27;initctl start &#x27; + service.name, cb);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+case &#x27;install&#x27;:
+  ndm.install();
+  break;
+case &#x27;remove&#x27;:
+  ndm.remove();
+  break;
+case &#x27;start&#x27;:
+  ndm.<span class="apidocCodeKeywordSpan">start</span>();
+  break;
+case &#x27;restart&#x27;:
+  ndm.restart();
+  break;
+case &#x27;stop&#x27;:
+  ndm.stop();
+  break;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ndm.centos.prototype.stop" id="apidoc.element.ndm.centos.prototype.stop">
+        function <span class="apidocSignatureSpan">ndm.centos.prototype.</span>stop
+        <span class="apidocSignatureSpan">(service, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stop = function (service, cb) {
+  service.execCommand(&#x27;initctl stop &#x27; + service.name, cb);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+case &#x27;start&#x27;:
+  ndm.start();
+  break;
+case &#x27;restart&#x27;:
+  ndm.restart();
+  break;
+case &#x27;stop&#x27;:
+  ndm.<span class="apidocCodeKeywordSpan">stop</span>();
+  break;
+case &#x27;list-scripts&#x27;:
+  ndm.listScripts();
+  break;
+case &#x27;run-script&#x27;:
+  ndm.runScript();
+  break;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ndm.cli_base" id="apidoc.module.ndm.cli_base">module ndm.cli_base</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ndm.cli_base.CliBase" id="apidoc.element.ndm.cli_base.CliBase">
+        function <span class="apidocSignatureSpan">ndm.cli_base.</span>CliBase
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function CliBase() {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ndm.darwin" id="apidoc.module.ndm.darwin">module ndm.darwin</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ndm.darwin.darwin" id="apidoc.element.ndm.darwin.darwin">
+        function <span class="apidocSignatureSpan">ndm.</span>darwin
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Darwin(opts) {
+  _.extend(this, {
+    platform: &#x27;darwin&#x27;,
+    template: path.resolve(__dirname, &#x27;../../templates/launchctl.ejs&#x27;)
+  }, opts);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ndm.darwin.super_" id="apidoc.element.ndm.darwin.super_">
+        function <span class="apidocSignatureSpan">ndm.darwin.</span>super_
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function PlatformBase(opts) {
+  _.extend(this, {
+    platform: null,
+    // path to template to use for service generation,
+    // use of a template may be optional.
+    template: null,
+    logger: require(&#x27;../logger&#x27;)
+  }, opts);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ndm.darwin.prototype" id="apidoc.module.ndm.darwin.prototype">module ndm.darwin.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ndm.darwin.prototype.restart" id="apidoc.element.ndm.darwin.prototype.restart">
+        function <span class="apidocSignatureSpan">ndm.darwin.prototype.</span>restart
+        <span class="apidocSignatureSpan">(service, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">restart = function (service, cb) {
+  service.execCommand(&#x27;launchctl unload &#x27; + service.scriptPath() + &#x27;;launchctl load &#x27; + service.scriptPath(), cb);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+case &#x27;remove&#x27;:
+  ndm.remove();
+  break;
+case &#x27;start&#x27;:
+  ndm.start();
+  break;
+case &#x27;restart&#x27;:
+  ndm.<span class="apidocCodeKeywordSpan">restart</span>();
+  break;
+case &#x27;stop&#x27;:
+  ndm.stop();
+  break;
+case &#x27;list-scripts&#x27;:
+  ndm.listScripts();
+  break;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ndm.darwin.prototype.start" id="apidoc.element.ndm.darwin.prototype.start">
+        function <span class="apidocSignatureSpan">ndm.darwin.prototype.</span>start
+        <span class="apidocSignatureSpan">(service, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">start = function (service, cb) {
+  service.execCommand(&#x27;launchctl load &#x27; + service.scriptPath(), cb);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+case &#x27;install&#x27;:
+  ndm.install();
+  break;
+case &#x27;remove&#x27;:
+  ndm.remove();
+  break;
+case &#x27;start&#x27;:
+  ndm.<span class="apidocCodeKeywordSpan">start</span>();
+  break;
+case &#x27;restart&#x27;:
+  ndm.restart();
+  break;
+case &#x27;stop&#x27;:
+  ndm.stop();
+  break;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ndm.darwin.prototype.stop" id="apidoc.element.ndm.darwin.prototype.stop">
+        function <span class="apidocSignatureSpan">ndm.darwin.prototype.</span>stop
+        <span class="apidocSignatureSpan">(service, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stop = function (service, cb) {
+  service.execCommand(&#x27;launchctl unload &#x27; + service.scriptPath(), cb);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+case &#x27;start&#x27;:
+  ndm.start();
+  break;
+case &#x27;restart&#x27;:
+  ndm.restart();
+  break;
+case &#x27;stop&#x27;:
+  ndm.<span class="apidocCodeKeywordSpan">stop</span>();
+  break;
+case &#x27;list-scripts&#x27;:
+  ndm.listScripts();
+  break;
+case &#x27;run-script&#x27;:
+  ndm.runScript();
+  break;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ndm.init_d" id="apidoc.module.ndm.init_d">module ndm.init_d</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ndm.init_d.init_d" id="apidoc.element.ndm.init_d.init_d">
+        function <span class="apidocSignatureSpan">ndm.</span>init_d
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function InitD(opts) {
+  _.extend(this, {
+    platform: &#x27;initd&#x27;,
+    template: path.resolve(__dirname, &#x27;../../templates/init-d.ejs&#x27;)
+  }, opts);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ndm.init_d.super_" id="apidoc.element.ndm.init_d.super_">
+        function <span class="apidocSignatureSpan">ndm.init_d.</span>super_
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function PlatformBase(opts) {
+  _.extend(this, {
+    platform: null,
+    // path to template to use for service generation,
+    // use of a template may be optional.
+    template: null,
+    logger: require(&#x27;../logger&#x27;)
+  }, opts);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ndm.init_d.prototype" id="apidoc.module.ndm.init_d.prototype">module ndm.init_d.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ndm.init_d.prototype.restart" id="apidoc.element.ndm.init_d.prototype.restart">
+        function <span class="apidocSignatureSpan">ndm.init_d.prototype.</span>restart
+        <span class="apidocSignatureSpan">(service, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">restart = function (service, cb) {
+  service.execCommand(&#x27;service &#x27; + service.name + &#x27; restart&#x27;, cb);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+case &#x27;remove&#x27;:
+  ndm.remove();
+  break;
+case &#x27;start&#x27;:
+  ndm.start();
+  break;
+case &#x27;restart&#x27;:
+  ndm.<span class="apidocCodeKeywordSpan">restart</span>();
+  break;
+case &#x27;stop&#x27;:
+  ndm.stop();
+  break;
+case &#x27;list-scripts&#x27;:
+  ndm.listScripts();
+  break;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ndm.init_d.prototype.start" id="apidoc.element.ndm.init_d.prototype.start">
+        function <span class="apidocSignatureSpan">ndm.init_d.prototype.</span>start
+        <span class="apidocSignatureSpan">(service, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">start = function (service, cb) {
+  service.execCommand(&#x27;service &#x27; + service.name + &#x27; start&#x27;, cb);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+case &#x27;install&#x27;:
+  ndm.install();
+  break;
+case &#x27;remove&#x27;:
+  ndm.remove();
+  break;
+case &#x27;start&#x27;:
+  ndm.<span class="apidocCodeKeywordSpan">start</span>();
+  break;
+case &#x27;restart&#x27;:
+  ndm.restart();
+  break;
+case &#x27;stop&#x27;:
+  ndm.stop();
+  break;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ndm.init_d.prototype.stop" id="apidoc.element.ndm.init_d.prototype.stop">
+        function <span class="apidocSignatureSpan">ndm.init_d.prototype.</span>stop
+        <span class="apidocSignatureSpan">(service, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stop = function (service, cb) {
+  service.execCommand(&#x27;service &#x27; + service.name + &#x27; stop&#x27;, cb);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+case &#x27;start&#x27;:
+  ndm.start();
+  break;
+case &#x27;restart&#x27;:
+  ndm.restart();
+  break;
+case &#x27;stop&#x27;:
+  ndm.<span class="apidocCodeKeywordSpan">stop</span>();
+  break;
+case &#x27;list-scripts&#x27;:
+  ndm.listScripts();
+  break;
+case &#x27;run-script&#x27;:
+  ndm.runScript();
+  break;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ndm.installer" id="apidoc.module.ndm.installer">module ndm.installer</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ndm.installer.installer" id="apidoc.element.ndm.installer.installer">
+        function <span class="apidocSignatureSpan">ndm.</span>installer
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Installer(opts) {
+  _.extend(this,
+    {},
+    require(&#x27;./config&#x27;)(),
+    opts
+  );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ndm.installer.prototype" id="apidoc.module.ndm.installer.prototype">module ndm.installer.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ndm.installer.prototype._generateServiceJson" id="apidoc.element.ndm.installer.prototype._generateServiceJson">
+        function <span class="apidocSignatureSpan">ndm.installer.prototype.</span>_generateServiceJson
+        <span class="apidocSignatureSpan">(update)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_generateServiceJson = function (update) {
+  var _this = this,
+    packageJson = this._getPackageJson(this.baseWorkingDirectory),
+    servicesJson = {};
+
+  if (update &#x26;&#x26; !(fs.existsSync(this.serviceJsonPath))) {
+    throw Error(serviceJsonPath + &#x27; does not exist. run ndm init.&#x27;)
+  } else if (update) {
+    servicesJson = utils.loadServiceJson(this.serviceJsonPath);
+  } else if (fs.existsSync(this.serviceJsonPath)) {
+    throw Error(_this.serviceJsonPath + &#x27; already exists.&#x27;);
+  }
+
+  if (!packageJson.dependencies) throw Error(&#x27;no services found, add dependencies to package.json.&#x27;);
+
+  // walk all the dependencies in package.json, and copy
+  // env, args, and scripts into default serviceJson.
+  Object.keys(packageJson.dependencies).forEach(function(module) {
+    var moduleDirectory = utils.resolve(
+        _this.baseWorkingDirectory,
+        &#x27;node_modules&#x27;,
+        module
+      ),
+      moduleName = module.replace(/^@.*\//, &#x27;&#x27;),
+      serviceJson = null,
+      moduleJson = null;
+
+    moduleJson = _this._getPackageJson(moduleDirectory);
+    serviceJson = moduleJson.service || {};
+
+    if (!servicesJson[moduleName]) {
+      servicesJson[moduleName] = {
+        description: moduleJson.description,
+        scripts:  _.merge({}, moduleJson.bin, moduleJson.scripts),
+        env: serviceJson.env || {},
+        args: serviceJson.args || {},
+      }
+
+      // scoped packages should have a module stanza which
+      // points to the appropriate folder.
+      if (moduleName !== module) servicesJson[moduleName].module = module;
+    }
+  });
+
+  fs.writeFileSync(this.serviceJsonPath, JSON.stringify(servicesJson, null, &#x27;  &#x27;));
+  logger.warn(&#x22;  generated &#x22; + this.serviceJsonPath);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  );
+}
+
+// create the service.json from the package.json.
+Installer.prototype.init = function() {
+  var logDirectory = utils.resolve(this.baseWorkingDirectory, &#x27;logs&#x27;);
+
+  this.<span class="apidocCodeKeywordSpan">_generateServiceJson</span>();
+  mkdirp.sync(logDirectory);
+
+  logger.warn(&#x22;  created &#x22; + logDirectory);
+  this._printInitMessage();
+};
+
+// this method handles both the update and generation use-case.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ndm.installer.prototype._getPackageJson" id="apidoc.element.ndm.installer.prototype._getPackageJson">
+        function <span class="apidocSignatureSpan">ndm.installer.prototype.</span>_getPackageJson
+        <span class="apidocSignatureSpan">(basePath)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_getPackageJson = function (basePath) {
+  var packagePath = utils.resolve(
+    basePath,
+    &#x27;package.json&#x27;
+  );
+
+  if (!fs.existsSync(packagePath)) throw Error(packagePath + &#x22; did not exist.\nadd your dependencies to package.json, and run npm
+ install.&#x22;)
+
+  return JSON.parse(
+    fs.readFileSync(packagePath).toString()
+  );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+logger.warn(&#x22;  created &#x22; + logDirectory);
+this._printInitMessage();
+};
+
+// this method handles both the update and generation use-case.
+Installer.prototype._generateServiceJson = function(update) {
+var _this = this,
+  packageJson = this.<span class="apidocCodeKeywordSpan">_getPackageJson</span>(this.baseWorkingDirectory),
+  servicesJson = {};
+
+if (update &#x26;&#x26; !(fs.existsSync(this.serviceJsonPath))) {
+  throw Error(serviceJsonPath + &#x27; does not exist. run ndm init.&#x27;)
+} else if (update) {
+  servicesJson = utils.loadServiceJson(this.serviceJsonPath);
+} else if (fs.existsSync(this.serviceJsonPath)) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ndm.installer.prototype._printInitMessage" id="apidoc.element.ndm.installer.prototype._printInitMessage">
+        function <span class="apidocSignatureSpan">ndm.installer.prototype.</span>_printInitMessage
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_printInitMessage = function () {
+  logger.log(&#x22;\nedit aservice.json&#x27; to setup your application&#x27;s environment.&#x22;);
+  logger.log(&#x22;when you&#x27;re ready, run &#x27;ndm generate&#x27; to generate service wrappers.&#x22;);
+  logger.log(&#x22;add dependencies to &#x27;package.json&#x27; and run &#x27;ndm update&#x27; to add additional services.&#x22;);
+  logger.success(&#x22;\nsuccess!&#x22;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Installer.prototype.init = function() {
+var logDirectory = utils.resolve(this.baseWorkingDirectory, &#x27;logs&#x27;);
+
+this._generateServiceJson();
+mkdirp.sync(logDirectory);
+
+logger.warn(&#x22;  created &#x22; + logDirectory);
+this.<span class="apidocCodeKeywordSpan">_printInitMessage</span>();
+};
+
+// this method handles both the update and generation use-case.
+Installer.prototype._generateServiceJson = function(update) {
+var _this = this,
+  packageJson = this._getPackageJson(this.baseWorkingDirectory),
+  servicesJson = {};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ndm.installer.prototype.init" id="apidoc.element.ndm.installer.prototype.init">
+        function <span class="apidocSignatureSpan">ndm.installer.prototype.</span>init
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">init = function () {
+  var logDirectory = utils.resolve(this.baseWorkingDirectory, &#x27;logs&#x27;);
+
+  this._generateServiceJson();
+  mkdirp.sync(logDirectory);
+
+  logger.warn(&#x22;  created &#x22; + logDirectory);
+  this._printInitMessage();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  });
+}
+};
+
+// initialize ndm directory.
+Cli.prototype.init = function() {
+this.logger.log(&#x22;setting up ndm directory:&#x22;);
+(new Installer()).<span class="apidocCodeKeywordSpan">init</span>();
+};
+
+// update service.json with new
+// services in package.json.
+Cli.prototype.update = function() {
+this.logger.log(&#x22;updating service.json:&#x22;);
+(new Installer()).update();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ndm.installer.prototype.update" id="apidoc.element.ndm.installer.prototype.update">
+        function <span class="apidocSignatureSpan">ndm.installer.prototype.</span>update
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">update = function () {
+  this._generateServiceJson(true);
+  this._printInitMessage();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+(new Installer()).init();
+};
+
+// update service.json with new
+// services in package.json.
+Cli.prototype.update = function() {
+this.logger.log(&#x22;updating service.json:&#x22;);
+(new Installer()).<span class="apidocCodeKeywordSpan">update</span>();
+};
+
+// list all available services.
+Cli.prototype.list = function(serviceName) {
+var _this = this;
+
+this.service.allServices(serviceName).forEach(function(service) {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ndm.logger" id="apidoc.module.ndm.logger">module ndm.logger</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ndm.logger.error" id="apidoc.element.ndm.logger.error">
+        function <span class="apidocSignatureSpan">ndm.logger.</span>error
+        <span class="apidocSignatureSpan">(message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">error = function (message) {
+  errorLogged = true;
+  this.log(chalk.red(message));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    filter = config.filter,
+    scriptsExecuted = 0;
+
+  scriptsExecuted = _.filter(this.service.allServices(filter), function(service) {
+    if (!service.hasScript(scriptName)) return false;
+
+    service.runScript(scriptName, function(err) {
+      if (err) _this.logger.<span class="apidocCodeKeywordSpan">error</span>(err);
+    });
+
+    return true;
+  }).length;
+
+  if (!scriptsExecuted) this[&#x27;list-scripts&#x27;]();
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ndm.logger.errorLogged" id="apidoc.element.ndm.logger.errorLogged">
+        function <span class="apidocSignatureSpan">ndm.logger.</span>errorLogged
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">errorLogged = function () {
+  return errorLogged;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+#!/usr/bin/env node
+
+require(&#x27;../lib/cli&#x27;)().run();
+
+// emit the appropriate exit code before shutting down.
+process.on(&#x27;exit&#x27;, function() {
+  if (require(&#x27;../lib/logger&#x27;).<span class="apidocCodeKeywordSpan">errorLogged</span>()) process.exit(1);
+  else process.exit(0);
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ndm.logger.log" id="apidoc.element.ndm.logger.log">
+        function <span class="apidocSignatureSpan">ndm.logger.</span>log
+        <span class="apidocSignatureSpan">(message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">log = function (message) {
+  if (!config.headless) {
+    console.log(message);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+// generate service-daemons from
+// service.json
+CliBase.prototype.generate = function() {
+var _this = this,
+  config = require(&#x27;./config&#x27;)();
+
+this.logger.<span class="apidocCodeKeywordSpan">log</span>(&#x27;generating service wrappers:&#x27;);
+
+// generate OS-specific daemon wrappers, this process
+// can be asynchrnous.
+async.each(this.service.allServices(config.filter), function(service, done) {
+  service.generateScript(function(err) {
+    _this.logger.warn(&#x22;  generated &#x22; + service.scriptPath());
+    _this.logger.warn(&#x27;  log path: &#x27; + service.logFile);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ndm.logger.success" id="apidoc.element.ndm.logger.success">
+        function <span class="apidocSignatureSpan">ndm.logger.</span>success
+        <span class="apidocSignatureSpan">(message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">success = function (message) {
+  this.log(chalk.green(message));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+// prints the current version of ndm that is installed.
+Cli.prototype.version = function() {
+var packageJson = JSON.parse(fs.readFileSync(
+  path.resolve(__dirname, &#x27;../package.json&#x27;), &#x27;utf-8&#x27;
+));
+
+this.logger.<span class="apidocCodeKeywordSpan">success</span>(&#x27;ndm version &#x27; + packageJson.version);
+this.logger.warn(&#x27;services in the cloud!&#x27;);
+};
+
+// export CLI as a singleton, to that
+// it can easily be imported for logging.
+module.exports = function(opts) {
+if (!opts &#x26;&#x26; cli) return cli;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ndm.logger.warn" id="apidoc.element.ndm.logger.warn">
+        function <span class="apidocSignatureSpan">ndm.logger.</span>warn
+        <span class="apidocSignatureSpan">(message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">warn = function (message) {
+  this.log(chalk.yellow(message));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  this.logger.log(&#x27;generating service wrappers:&#x27;);
+
+  // generate OS-specific daemon wrappers, this process
+  // can be asynchrnous.
+  async.each(this.service.allServices(config.filter), function(service, done) {
+    service.generateScript(function(err) {
+      _this.logger.<span class="apidocCodeKeywordSpan">warn</span>(&#x22;  generated &#x22; + service.scriptPath());
+      _this.logger.warn(&#x27;  log path: &#x27; + service.logFile);
+      done();
+    });
+  }, function() {
+    _this.service.printRunMessage();
+  });
+};
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ndm.platform_base" id="apidoc.module.ndm.platform_base">module ndm.platform_base</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ndm.platform_base.PlatformBase" id="apidoc.element.ndm.platform_base.PlatformBase">
+        function <span class="apidocSignatureSpan">ndm.platform_base.</span>PlatformBase
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function PlatformBase(opts) {
+  _.extend(this, {
+    platform: null,
+    // path to template to use for service generation,
+    // use of a template may be optional.
+    template: null,
+    logger: require(&#x27;../logger&#x27;)
+  }, opts);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ndm.service" id="apidoc.module.ndm.service">module ndm.service</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ndm.service._serviceJsonPath" id="apidoc.element.ndm.service._serviceJsonPath">
+        function <span class="apidocSignatureSpan">ndm.service.</span>_serviceJsonPath
+        <span class="apidocSignatureSpan">(serviceNameFilter)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_serviceJsonPath = function (serviceNameFilter) {
+  var config = require(&#x27;./config&#x27;)(),
+    packageJsonPath = path.resolve(path.dirname(config.serviceJsonPath), &#x27;./package.json&#x27;),
+    baseWorkingDirectory = null,
+    pathsToCheck = [
+      path.resolve(config.modulePrefix, &#x27;node_modules&#x27;),
+      path.resolve(config.modulePrefix, &#x27;lib&#x27;, &#x27;node_modules&#x27;),
+      &#x27;./node_modules&#x27;,
+      config.baseWorkingDirectory
+    ];
+
+  if (fs.existsSync(config.serviceJsonPath)) return config.serviceJsonPath;
+  else if (fs.existsSync(packageJsonPath)) {
+    // did we find a package.json, and does it have the same
+    // &#x27;name&#x27; as serviceNameFilter?
+    try {
+      var packageJson = JSON.parse(fs.readFileSync(packageJsonPath, &#x27;utf-8&#x27;));
+      if (!serviceNameFilter || packageJson.name === serviceNameFilter) return packageJsonPath;
+    } catch (e) {
+      throw Error(&#x27;could not load &#x27; + packageJsonPath + &#x27;.&#x27;)
+    }
+  } else if (!serviceNameFilter) return config.serviceJsonPath;
+
+  var baseWorkingDirectory = _.filter(pathsToCheck, function(serviceJsonPath) {
+    return fs.existsSync(
+      path.resolve(serviceJsonPath, serviceNameFilter)
+    );
+  })[0];
+
+  // we found a good candidate for a
+  // working directory, update config appropriately.
+  if (baseWorkingDirectory) {
+    baseWorkingDirectory = path.resolve(baseWorkingDirectory, serviceNameFilter);
+    config.baseWorkingDirectory = baseWorkingDirectory;
+
+    var serviceJsonPath = path.resolve(baseWorkingDirectory, &#x27;service.json&#x27;),
+      packageJsonPath = path.resolve(baseWorkingDirectory, &#x27;package.json&#x27;);
+
+    // look for a service.json, fall back to the package.json.
+    if (fs.existsSync(serviceJsonPath)) config.serviceJsonPath = serviceJsonPath;
+    else config.serviceJsonPath = packageJsonPath;
+
+    // only use global logs directory if we&#x27;re not overriding the logs dir.
+    if (config.logsDirectory === config.defaultLogsDirectory()) {
+      config.logsDirectory = config.osLogsDirectory;
+    }
+
+    //use global interpretation of commands: ndm &#x3c;cmd&#x3e; &#x3c;global-package&#x3e;
+    config.globalPackage = true;
+  };
+
+  return config.serviceJsonPath;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+// Ask a user questions about the service they&#x27;re
+// installing, and install it.
+CliBase.prototype.install = function(serviceName) {
+var _this = this,
+  tmpServiceJsonPath = temp.path({suffix: &#x27;.json&#x27;}),
+  srcServiceJsonPath = Service.<span class="apidocCodeKeywordSpan">_serviceJsonPath</span>(serviceName),
+  interview = new this.Interview({
+    serviceJsonPath: srcServiceJsonPath,
+    tmpServiceJsonPath: tmpServiceJsonPath
+  });
+
+interview.run(function() {
+  config.tmpServiceJsonPath = tmpServiceJsonPath; // point to temporary config.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ndm.service.allServices" id="apidoc.element.ndm.service.allServices">
+        function <span class="apidocSignatureSpan">ndm.service.</span>allServices
+        <span class="apidocSignatureSpan">(serviceNameFilter)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">allServices = function (serviceNameFilter) {
+  var config = require(&#x27;./config&#x27;)(),
+    serviceJson = null,
+    serviceJsonPath = exports._serviceJsonPath(serviceNameFilter),
+    utils = require(&#x27;./utils&#x27;);
+
+  // raise a human readable error if we can&#x27;t find
+  // the service.json file.
+  try {
+    serviceJson = fs.readFileSync(
+      config.tmpServiceJsonPath ? config.tmpServiceJsonPath : utils.resolve(serviceJsonPath)
+    ).toString();
+  } catch (e) {
+    throw Error(&#x27;could not load &#x27; + serviceJsonPath + &#x27; run ndm init, to create a service.json from your package.json.&#x27;)
+  }
+
+  try {
+    serviceJson = JSON.parse(serviceJson);
+  } catch (e) {
+    throw Error(&#x27;invalid service.json, check file for errors.&#x27;);
+  }
+
+  if (!config.tmpServiceJsonPath &#x26;&#x26; serviceJsonPath.indexOf(&#x27;package.json&#x27;) !== -1) {
+    // we are attempting to load a package.json rather than a service.json.
+    return parseServiceJson(
+      serviceNameFilter,
+      exports.transformPackageJson(serviceJson)
+    );
+  } else {
+    // serviceJsonPath points to a service.json file.
+    return parseServiceJson(serviceNameFilter, serviceJson);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var _this = this,
+  config = require(&#x27;./config&#x27;)();
+
+this.logger.log(&#x27;generating service wrappers:&#x27;);
+
+// generate OS-specific daemon wrappers, this process
+// can be asynchrnous.
+async.each(this.service.<span class="apidocCodeKeywordSpan">allServices</span>(config.filter), function(service, done) {
+  service.generateScript(function(err) {
+    _this.logger.warn(&#x22;  generated &#x22; + service.scriptPath());
+    _this.logger.warn(&#x27;  log path: &#x27; + service.logFile);
+    done();
+  });
+}, function() {
+  _this.service.printRunMessage();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ndm.service.printRunMessage" id="apidoc.element.ndm.service.printRunMessage">
+        function <span class="apidocSignatureSpan">ndm.service.</span>printRunMessage
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">printRunMessage = function () {
+  var logger = require(&#x27;./logger&#x27;);
+
+  logger.log(&#x22;\nto start all services run: &#x27;&#x22; + require(&#x27;./config&#x27;)().appName + &#x22; start&#x27;&#x22;);
+  logger.log(&#x22;or manually start the service using &#x27;launchctl&#x27;, &#x27;initctl&#x27;, or &#x27;upstart&#x27;&#x22;);
+  logger.success(&#x22;\nsuccess!&#x22;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+async.each(this.service.allServices(config.filter), function(service, done) {
+  service.generateScript(function(err) {
+    _this.logger.warn(&#x22;  generated &#x22; + service.scriptPath());
+    _this.logger.warn(&#x27;  log path: &#x27; + service.logFile);
+    done();
+  });
+}, function() {
+  _this.service.<span class="apidocCodeKeywordSpan">printRunMessage</span>();
+});
+};
+
+// remove service-daemons
+CliBase.prototype.remove = function(serviceName) {
+var _this = this;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ndm.service.transformPackageJson" id="apidoc.element.ndm.service.transformPackageJson">
+        function <span class="apidocSignatureSpan">ndm.service.</span>transformPackageJson
+        <span class="apidocSignatureSpan">(packageJson)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">transformPackageJson = function (packageJson) {
+  var serviceJson = {},
+    innerJson = serviceJson[packageJson.name] = {};
+
+  // map fields from the format expected in package.json, to the format
+  // used by service.json.
+  if (packageJson.description) innerJson.description = packageJson.description;
+  if (packageJson.scripts) innerJson.scripts = packageJson.scripts;
+  if (packageJson.service) { // special fields specific to ndm.
+    if (packageJson.service.args) innerJson.args = packageJson.service.args;
+    if (packageJson.service.env) innerJson.env = packageJson.service.env;
+  }
+
+  return serviceJson;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    throw Error(&#x27;invalid service.json, check file for errors.&#x27;);
+  }
+
+  if (!config.tmpServiceJsonPath &#x26;&#x26; serviceJsonPath.indexOf(&#x27;package.json&#x27;) !== -1) {
+    // we are attempting to load a package.json rather than a service.json.
+    return parseServiceJson(
+      serviceNameFilter,
+      exports.<span class="apidocCodeKeywordSpan">transformPackageJson</span>(serviceJson)
+    );
+  } else {
+    // serviceJsonPath points to a service.json file.
+    return parseServiceJson(serviceNameFilter, serviceJson);
+  }
+};
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ndm.ubuntu" id="apidoc.module.ndm.ubuntu">module ndm.ubuntu</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ndm.ubuntu.ubuntu" id="apidoc.element.ndm.ubuntu.ubuntu">
+        function <span class="apidocSignatureSpan">ndm.</span>ubuntu
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Ubuntu(opts) {
+  _.extend(this, {
+    platform: &#x27;ubuntu&#x27;,
+    template: path.resolve(__dirname, &#x27;../../templates/upstart-ubuntu.ejs&#x27;)
+  }, opts);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ndm.ubuntu.super_" id="apidoc.element.ndm.ubuntu.super_">
+        function <span class="apidocSignatureSpan">ndm.ubuntu.</span>super_
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function PlatformBase(opts) {
+  _.extend(this, {
+    platform: null,
+    // path to template to use for service generation,
+    // use of a template may be optional.
+    template: null,
+    logger: require(&#x27;../logger&#x27;)
+  }, opts);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ndm.ubuntu.prototype" id="apidoc.module.ndm.ubuntu.prototype">module ndm.ubuntu.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ndm.ubuntu.prototype.restart" id="apidoc.element.ndm.ubuntu.prototype.restart">
+        function <span class="apidocSignatureSpan">ndm.ubuntu.prototype.</span>restart
+        <span class="apidocSignatureSpan">(service, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">restart = function (service, cb) {
+  service.execCommand(&#x27;service &#x27; + service.name + &#x27; restart&#x27;, cb);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+case &#x27;remove&#x27;:
+  ndm.remove();
+  break;
+case &#x27;start&#x27;:
+  ndm.start();
+  break;
+case &#x27;restart&#x27;:
+  ndm.<span class="apidocCodeKeywordSpan">restart</span>();
+  break;
+case &#x27;stop&#x27;:
+  ndm.stop();
+  break;
+case &#x27;list-scripts&#x27;:
+  ndm.listScripts();
+  break;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ndm.ubuntu.prototype.start" id="apidoc.element.ndm.ubuntu.prototype.start">
+        function <span class="apidocSignatureSpan">ndm.ubuntu.prototype.</span>start
+        <span class="apidocSignatureSpan">(service, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">start = function (service, cb) {
+  service.execCommand(&#x27;service &#x27; + service.name + &#x27; start&#x27;, cb);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+case &#x27;install&#x27;:
+  ndm.install();
+  break;
+case &#x27;remove&#x27;:
+  ndm.remove();
+  break;
+case &#x27;start&#x27;:
+  ndm.<span class="apidocCodeKeywordSpan">start</span>();
+  break;
+case &#x27;restart&#x27;:
+  ndm.restart();
+  break;
+case &#x27;stop&#x27;:
+  ndm.stop();
+  break;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ndm.ubuntu.prototype.stop" id="apidoc.element.ndm.ubuntu.prototype.stop">
+        function <span class="apidocSignatureSpan">ndm.ubuntu.prototype.</span>stop
+        <span class="apidocSignatureSpan">(service, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stop = function (service, cb) {
+  service.execCommand(&#x27;service &#x27; + service.name + &#x27; stop&#x27;, cb);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+case &#x27;start&#x27;:
+  ndm.start();
+  break;
+case &#x27;restart&#x27;:
+  ndm.restart();
+  break;
+case &#x27;stop&#x27;:
+  ndm.<span class="apidocCodeKeywordSpan">stop</span>();
+  break;
+case &#x27;list-scripts&#x27;:
+  ndm.listScripts();
+  break;
+case &#x27;run-script&#x27;:
+  ndm.runScript();
+  break;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ndm.utils" id="apidoc.module.ndm.utils">module ndm.utils</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ndm.utils.exec" id="apidoc.element.ndm.utils.exec">
+        function <span class="apidocSignatureSpan">ndm.utils.</span>exec
+        <span class="apidocSignatureSpan">(command, cwd, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">exec = function (command, cwd, cb) {
+  // working directory is optional.
+  if (typeof cwd === &#x27;function&#x27;) {
+    cb = cwd;
+    cwd = &#x27;./&#x27;;
+  }
+
+  var proc = spawn(&#x27;sh&#x27;, [&#x27;-c&#x27;, command], {
+    cwd: cwd,
+    env: process.env,
+    stdio: [process.stdin, process.stdout, null]
+  });
+
+  proc.stderr.on(&#x27;data&#x27;, function(data) {
+    logger.error(&#x27;  &#x27; + data.toString().trim());
+  });
+
+  proc.on(&#x27;close&#x27;, function(output) {
+    cb();
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  this._getPlatformApi()[command](this, cb);
+};
+
+// Helper for executing commands in child processes.
+// actually exec a command, optionally as a super user.
+Service.prototype.execCommand = function(command, cb) {
+  if (this.runnable()) {
+    this.utils.<span class="apidocCodeKeywordSpan">exec</span>(
+      (this.sudo ? &#x27;sudo &#x27; : &#x27;&#x27;) + command,
+      cb
+    );
+  }
+};
+
+// Does the service have a script corresponding
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ndm.utils.loadServiceJson" id="apidoc.element.ndm.utils.loadServiceJson">
+        function <span class="apidocSignatureSpan">ndm.utils.</span>loadServiceJson
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">loadServiceJson = function (path) {
+  var services = null;
+
+  try {
+    services = fs.readFileSync(path).toString();
+  } catch (e) {
+    throw Error(&#x27;could not load &#x27; + path);
+  }
+
+  try {
+    services = JSON.parse(services);
+  } catch (e) {
+    throw Error(&#x27;invalid json in &#x27; + path + &#x27;, check file for errors.&#x27;);
+  }
+
+  return services;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var _this = this,
+  packageJson = this._getPackageJson(this.baseWorkingDirectory),
+  servicesJson = {};
+
+if (update &#x26;&#x26; !(fs.existsSync(this.serviceJsonPath))) {
+  throw Error(serviceJsonPath + &#x27; does not exist. run ndm init.&#x27;)
+} else if (update) {
+  servicesJson = utils.<span class="apidocCodeKeywordSpan">loadServiceJson</span>(this.serviceJsonPath);
+} else if (fs.existsSync(this.serviceJsonPath)) {
+  throw Error(_this.serviceJsonPath + &#x27; already exists.&#x27;);
+}
+
+if (!packageJson.dependencies) throw Error(&#x27;no services found, add dependencies to package.json.&#x27;);
+
+// walk all the dependencies in package.json, and copy
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ndm.utils.resolve" id="apidoc.element.ndm.utils.resolve">
+        function <span class="apidocSignatureSpan">ndm.utils.</span>resolve
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">resolve = function () { // (...)
+  var args = Array.prototype.slice.call(arguments);
+
+  // replace ~/ with absolute path.
+  args[0] = args[0].replace(&#x27;~/&#x27;, process.env[&#x27;HOME&#x27;] + &#x27;/&#x27;);
+
+  return path.resolve.apply(this, args);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  var interview = new this.Interview();
+  interview.run(function() {});
+};
+
+// prints the current version of ndm that is installed.
+Cli.prototype.version = function() {
+  var packageJson = JSON.parse(fs.readFileSync(
+    path.<span class="apidocCodeKeywordSpan">resolve</span>(__dirname, &#x27;../package.json&#x27;), &#x27;utf-8&#x27;
+  ));
+
+  this.logger.success(&#x27;ndm version &#x27; + packageJson.version);
+  this.logger.warn(&#x27;services in the cloud!&#x27;);
+};
+
+// export CLI as a singleton, to that
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ndm.utils.writeServiceJson" id="apidoc.element.ndm.utils.writeServiceJson">
+        function <span class="apidocSignatureSpan">ndm.utils.</span>writeServiceJson
+        <span class="apidocSignatureSpan">(path, services)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">writeServiceJson = function (path, services) {
+  try {
+    fs.writeFileSync(path, JSON.stringify(services, null, &#x27;  &#x27;));
+    logger.success(&#x27;wrote &#x27; + path + &#x27; to disk.&#x27;)
+  } catch (e) {
+    throw Error(&#x27;failed to write to &#x27; + path);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
